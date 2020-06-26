@@ -3,12 +3,10 @@ pipeline {
    stages {
       stage('Hello') {
          steps {
+           sh 'mvn clean package'
            sh 'cd /home/aditya/aditya/JavaHelloWorld/'
            sh 'git pull origin master'
            sh 'cp -r /var/lib/jenkins/workspace/pet-clinic-config-service/spring-petclinic-config-server/target/  /home/aditya/aditya/JavaHelloWorld/'
-           sh 'git add .'
-           sh 'git commit -m "added"'
-           sh 'git push origin master'
          }
       }
    }
