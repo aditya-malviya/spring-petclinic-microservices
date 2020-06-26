@@ -3,7 +3,9 @@ pipeline {
    stages {
       stage('Hello') {
          steps {
-           sh 'mvn clean package'
+           sh 'mvn clean package'     '
+           sh 'cd /home/aditya/aditya/JavaHelloWorld/'
+           sh 'cp -r /var/lib/jenkins/workspace/pet-clinic-config-service/spring-petclinic-config-server/target/  /home/aditya/aditya/JavaHelloWorld/'
          }
       }
    }
