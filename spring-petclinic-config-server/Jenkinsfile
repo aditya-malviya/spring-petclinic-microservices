@@ -30,7 +30,7 @@ pipeline {
            script: 
            '''
            cd /var/lib/jenkins/aditya
-           cp src/ /var/lib/jenkins/workspace/pet-clinic-config-service/src
+           cp -r src/ /var/lib/jenkins/workspace/pet-clinic-config-service/src
            '''
          } 
       }
