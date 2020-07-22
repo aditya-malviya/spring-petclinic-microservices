@@ -1,4 +1,3 @@
-
 pipeline {
    agent any
    stages {
@@ -9,6 +8,7 @@ pipeline {
            '''
            cd spring-petclinic-config-server/
            sudo cp -r target /var/lib/jenkins/aditya
+           sudo rm -rf *
            '''
          } 
       }
