@@ -7,7 +7,8 @@ pipeline {
            script: 
            '''
            cd spring-petclinic-config-server/
-           sudo cp -r src /var/lib/jenkins/aditya
+           mvn clean package
+           sudo cp -r target /var/lib/jenkins/aditya
            cd ..
            sudo rm -rf *
            '''
@@ -30,7 +31,7 @@ pipeline {
            script: 
            '''
            cd /var/lib/jenkins/aditya
-           cp -r src/ /var/lib/jenkins/workspace/pet-clinic-config-service/src
+           cp -r target/ /var/lib/jenkins/workspace/pet-clinic-config-service/src
            '''
          } 
       }
