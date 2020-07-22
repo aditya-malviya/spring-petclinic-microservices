@@ -37,9 +37,9 @@ pipeline {
            cd /var/lib/jenkins/aditya
            cp -r target/ /var/lib/jenkins/workspace/pet-clinic-config-service/src
            cd /var/lib/jenkins/workspace/pet-clinic-config-service
-           git add .
-           git commit -m "added"
-           git push origin master
+           sudo git add .
+           sudo git commit -m "added"
+           sudo git push origin master
            '''
          } 
       }
