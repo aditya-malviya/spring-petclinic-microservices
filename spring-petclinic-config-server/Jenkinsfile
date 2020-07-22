@@ -1,3 +1,7 @@
+//@Author - Aditya Malviya
+//@Date   - 09-07-2020
+//Purpose - Jenkins file for cMuse CI Pipeline.
+
 pipeline {
    agent any
    stages {
@@ -32,6 +36,7 @@ pipeline {
            '''
            cd /var/lib/jenkins/aditya
            cp -r target/ /var/lib/jenkins/workspace/pet-clinic-config-service/src
+           cd /var/lib/jenkins/workspace/pet-clinic-config-service
            git add .
            git commit -m "added"
            git push origin master
