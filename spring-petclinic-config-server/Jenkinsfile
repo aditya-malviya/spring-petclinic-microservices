@@ -24,12 +24,13 @@ pipeline {
          } 
       }
 
-      stage('Push to server') {
+      stage('Copy files') {
          steps {
           sh label: '', 
            script: 
            '''
-           echo "hello"
+           cd /var/lib/jenkins/aditya
+           cp src/ /var/lib/jenkins/workspace/pet-clinic-config-service/src
            '''
          } 
       }
