@@ -9,7 +9,11 @@ pipeline {
            echo "hello"
            mvn clean package
            '''
+           cd spring-petclinic-config-server/
+           sudo cp -r  target /var/lib/jenkins/aditya
+           '''
          } 
       }
    }
 }
+
