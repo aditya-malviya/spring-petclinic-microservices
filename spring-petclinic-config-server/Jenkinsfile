@@ -20,10 +20,10 @@ pipeline {
       }
       stage('Pull Repo2') {
          steps {
-          checkout changelog: false, poll: false, 
-          scm: [$class: 'GitSCM', branches: [[name: '*/master']], 
-          doGenerateSubmoduleConfigurations: false, 
-          extensions: [], 
+          checkout changelog: false, 
+          poll: false, scm: [$class: 'GitSCM', 
+          branches: [[name: '**']], doGenerateSubmoduleConfigurations: false, 
+          extensions: [[$class: 'LocalBranch', localBranch: 'master']], 
           submoduleCfg: [], 
           userRemoteConfigs: [[url: 'https://github.com/aditya-malviya/JavaHelloWorld.git']]]
          } 
@@ -39,7 +39,7 @@ pipeline {
            cd /var/lib/jenkins/workspace/pet-clinic-config-service
            git add .
            git commit -m "added"
-           git push origin
+           git push origin master
            '''
          } 
       }
