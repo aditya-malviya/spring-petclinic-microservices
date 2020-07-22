@@ -2,13 +2,33 @@
 pipeline {
    agent any
    stages {
-      stage('Hello') {
+      stage('Pull Repo1') {
          steps {
           sh label: '', 
            script: 
            '''
            cd spring-petclinic-config-server/
-           sudo cp -r target/ /var/lib/jenkins/aditya
+           sudo cp -r target /var/lib/jenkins/aditya
+           '''
+         } 
+      }
+      stage('Pull Repo2') {
+         steps {
+          checkout changelog: false, poll: false, 
+          scm: [$class: 'GitSCM', branches: [[name: '*/master']], 
+          doGenerateSubmoduleConfigurations: false, 
+          extensions: [], 
+          submoduleCfg: [], 
+          userRemoteConfigs: [[url: 'https://github.com/aditya-malviya/JavaHelloWorld.git']]]
+         } 
+      }
+
+      stage('Push to server') {
+         steps {
+          sh label: '', 
+           script: 
+           '''
+           echo "hello"
            '''
          } 
       }
