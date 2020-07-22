@@ -8,6 +8,7 @@ pipeline {
            '''
            cd spring-petclinic-config-server/
            sudo cp -r target /var/lib/jenkins/aditya
+           cd ..
            sudo rm -rf *
            '''
          } 
