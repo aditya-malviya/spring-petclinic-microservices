@@ -6,6 +6,7 @@ pipeline {
           sh label: '', 
            script: 
            '''
+           echo "hello"
            cd spring-petclinic-config-server
            mvn clean package
            '''
