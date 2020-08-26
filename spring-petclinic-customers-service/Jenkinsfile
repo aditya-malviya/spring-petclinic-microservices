@@ -1,0 +1,18 @@
+//@Author - Aditya Malviya
+//@Date   - 09-07-2020
+//Purpose - Jenkins file for cMuse CI Pipeline.
+
+pipeline {
+   agent any
+   stages {
+      stage('Pull Repo1') {
+         steps {
+          sh label: '', 
+           script: 
+           '''
+           echo "Hello"
+           '''
+         } 
+      }
+   }
+}
